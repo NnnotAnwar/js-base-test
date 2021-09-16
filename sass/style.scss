@@ -1,0 +1,136 @@
+@import "reset.scss";
+
+body {
+    background-color: rgb(206, 240, 210);
+}
+
+.bg-header {
+    background: #1abc9c;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    color: white;
+    padding: 20px;
+}
+
+.header-contacts {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.logo {
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.h-link {
+    color: #fff;
+}
+
+.main {
+    margin-top: 1em;
+}
+
+.article {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+
+.art-pic {
+    margin-top: 1em;
+    max-width: 50%;
+}
+.art-container {
+    max-width: 33%;
+    font-size: 25px;
+}
+
+.art-header {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 25px;
+}
+
+.art-header::before {
+    background-color: rgb(199, 119, 119);
+    content: "♥";
+}
+
+.art-text {
+    font-size: 23px;
+}
+
+.contact-form {
+    width: 100%;
+    margin-top: 3em;
+}
+
+.cf-header {
+    text-align: center;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+form {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.cf-field {
+    text-align: center;
+    margin-top: 1em;
+    font-size: 20px;
+}
+
+.cf-send-btn {
+    text-align: center;
+    margin-top: 1em;
+}
+
+textarea {
+    resize: none;
+}
+
+.footer {
+    margin-top: 3em;
+    padding: 15px;
+    background-color: rgb(67, 121, 118);
+    bottom: 0;
+}
+
+.copyright {
+    text-align: center;
+    text-transform: uppercase;
+    color: seashell;
+}
+
+.blue {
+    background-color: rgb(195, 195, 236);
+    text-align: center;
+    font-size: 25px;
+}
+
+.scrollButton {
+    background-color: rgb(245, 211, 198);
+    border-radius: 15px;
+    border: none;
+    margin: 5px;
+}
+
+.gray {
+    background-color: rgb(81, 247, 123);
+    text-align: center;
+    font-size: 25px;
+    position: relative;
+}
+
+.scroll-lock {
+    overflow: hidden;
+}
