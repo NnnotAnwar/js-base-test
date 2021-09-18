@@ -173,7 +173,7 @@ document.querySelectorAll('[type]') // NodeList(4) [link, input, button.btn.btn
 document.querySelectorAll('[method="post"]') // NodeList [form]
 
 // querySelector( 'tag, .class, #id, [attribute], [attribute = 'value']' ) - gets an element
-const artHeader = document.querySelector('.art-header') // <h1 class="art-header">Head of the article</h1>
+const artHeader = document.querySelector('.art-header') // <h2 class="art-header">Head of the article</h2>
 const redContact = document.querySelector('.red')
 // getElementBy Id, TagName, ClassName, Name( 'id, tagName, className, name' ) - ById gets an element that appropriate, ByTagName and ByClassname get HTMLCollection
 document.getElementById('dogImage') // <img id="dogImage" src="img/img-dog.jpg" alt>
@@ -193,7 +193,7 @@ artHeader.textContent = 'Blue <span style="color: blue">text</span>' // returns 
 
 /*
 artHeader.innerHTML // 'Red <span style="color: red">text</span>'
-artHeader.outerHTML // '<h1 class="art-header">Red <span style="color: red">text</span></h1>'
+artHeader.outerHTML // '<h2 class="art-header">Red <span style="color: red">text</span></h2>'
 artHeader.textContent // 'Blue &lt;span style="coloe: blue"&gt;text&lt;/span&gt;'
 */
 
@@ -229,7 +229,7 @@ cloneNewElement.remove()
 // element.className
 
 artHeaderClass = artHeader.className // 'art-header'
-artHeader.className = `${artHeaderClass} some-class` // h1.art-header.some-class
+artHeader.className = `${artHeaderClass} some-class` // h2.art-header.some-class
 
 // element.classList
 
