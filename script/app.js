@@ -176,7 +176,7 @@ document.querySelectorAll('[method="post"]') // NodeList [form]
 const artHeader = document.querySelector('.art-header') // <h2 class="art-header">Head of the article</h2>
 const redContact = document.querySelector('.red')
 // getElementBy Id, TagName, ClassName, Name( 'id, tagName, className, name' ) - ById gets an element that appropriate, ByTagName and ByClassname get HTMLCollection
-document.getElementById('dogImage') // <img id="dogImage" src="img/img-dog.jpg" alt>
+const dogImage = document.getElementById('dogImage') // <img id="dogImage" src="img/img-dog.jpg" alt>
 document.getElementsByTagName('button') // HTMLCollection [button.btn.btn-success]   
 document.getElementsByClassName('cf-field') // HTMLCollection(2) [div.cf-field, div.cf-field]
 document.getElementsByName('contFormText') // NodeList [textarea]
@@ -397,3 +397,98 @@ const getItemTopCoords = getItemCoords.top // clientTopCoords
 const getItemTopDocumentCoords = getItemTopCoords + window.pageYOffset // pageTopCoords
 
 document.elementFromPoint(0, 0) // returns element on the coords (clientCoordss)
+
+// Event Listeners
+const options = {
+    'capture': false,
+    'once': true, // the same as removeEventListener
+    'passive': false
+}
+
+const logo = document.querySelector('.logo')
+
+const firstEventListener = function () {
+    console.log('1st eventListener. Click on the logotype.')
+    logo.removeEventListener('click', firstEventListener) // removes eventListener
+}
+
+// element.addEventListener('event', function, options)
+// element.removeEventListener('event', function, options)
+
+logo.addEventListener('click', firstEventListener) // add new eventListener
+
+logo.addEventListener('click', function () {
+    console.log('2nd eventListener')
+}, options)
+
+const showEvent = (event) => {
+    console.log(event)
+    console.log(event.type)
+    console.log(event.target)
+    console.log(event.currentTarget)
+    console.log(event.clientX)
+    console.log(event.clientY)
+}
+
+logo.addEventListener('mouseenter', showEvent, { 'once': true })
+
+const google = document.querySelector('.googleLink')
+const steam = document.querySelector('.steamLink')
+
+google.addEventListener('click', (event) => {
+    console.log('Click on the link Google')
+    event.preventDefault() // stops browser's functions default behavior
+})
+
+steam.addEventListener('click', (event) => {
+    console.log('Click on the link Steam')
+    event.preventDefault()
+}, { 'passive': true }) // option property cancels event.preventDefault() function
+
+
+
+// steam.onclick = function () {
+//     console.log('Click on the link Steam by onclick')
+//     return false; // the same as event.preventDefault()
+// }
+
+
+// Events 
+/* 
+
+s1mple events
+
+mousedown / mouseup - left click and holding the target / release left click from the target
+mouseover / mouseout - getting the mouse over the target / getting out from the target
+mousemove - moving the mouse over the target
+contextmenu - right click on the target
+
+complex events
+
+click - left click on the target (mousedown and mouseup)
+dblclick - double left click on the target(click and click)
+*/
+
+/* 
+// Window load events 
+
+window.addEventListener('beforeunload', (event) => {
+    event.preventDefault()
+    event.returnValue = ''
+})
+
+window.addEventListener('load', () => {
+    console.log(document.readyState);
+    console.log('Page is loaded');
+    console.log(dogImage.offsetWidth);
+})
+
+// Document load event
+document.addEventListener('DOMContentLoaded', () => {
+    console.log(document.readyState);
+    console.log('DOM is loaded');
+    console.log(dogImage.offsetWidth);
+})
+
+
+*/
